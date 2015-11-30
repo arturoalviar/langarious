@@ -1,0 +1,50 @@
+.btn{
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: $spacing-unit/3 $spacing-unit/2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flat-btn{
+  display: inline-block;
+  color: $btn;
+  margin: $spacing-unit;
+  &:first-of-type{
+    margin-left: 0;
+  }
+}
+
+.raised-btn{
+  @include animate();
+  background: $btn;
+  color: $true-white;
+  border-radius: .25rem;
+  box-shadow: $material-box-shadow;
+  cursor: pointer;
+  font-size: $body-copy - .1rem;
+  font-weight: 600;
+
+  &:first-of-type{
+    margin-left: 0;
+  }
+  &:hover{
+    box-shadow: $material-box-shadow-hover;
+  }
+}
+
+.fab-btn{
+  @extend .raised-btn;
+  position: fixed;
+  bottom: $spacing-unit;
+  right: $spacing-unit;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  z-index: 9999;
+  .fa{
+    margin-top: 1.1rem;
+  }
+}

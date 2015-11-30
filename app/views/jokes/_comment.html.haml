@@ -1,0 +1,24 @@
+- if !comment.content.nil?
+  .card-element
+    .flexbox
+      .small-text
+        Posted up by
+        %span
+          = link_to comment.joke.user.username, comment.joke
+        %span
+          = time_ago_in_words(comment.created_at)
+          ago
+    .vote-container.center
+      .votes
+        = link_to upvote_joke_comment_path(comment.joke, comment), method: :get do
+          %i.fa.fa-arrow-circle-o-up.fa-lg
+        %p
+          = comment.upvotes_score
+        = link_to downvote_joke_comment_path(comment.joke, comment), method: :get do
+          %i.fa.fa-arrow-circle-o-down.fa-lg
+    %p.joke-comment
+      = comment.content
+    - if @signed_in_username.eql? @joke.user.username
+      .small-text
+        .user-post-controls
+          =link_to "Delete", [comment.joke, comment], method: :delete

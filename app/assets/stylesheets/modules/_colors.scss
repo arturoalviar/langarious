@@ -1,0 +1,22 @@
+$grey:                  #F1F1F1;
+$black:                 #212121;
+$white:                 #F5F5F5;
+$true-white:            #FFFFFF;
+
+$main-color:            #2e78ca;
+
+$banner: $main-color;
+$card: $true-white;
+
+$inline-btn: $main-color;
+$btn: $main-color;
+$btn-text: $white;
+
+$header-text-color: #424242;
+$body-text-color: #616161;
+
+$sub-text: lighten($body-text-color, 15%);
+
+
+$alert: #EF5350;
+$success: #66BB6A;

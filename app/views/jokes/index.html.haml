@@ -1,0 +1,35 @@
+.container-small
+  - if user_signed_in?
+    %p.welcome-msg.center
+      Hola
+      = current_user.username
+      %br
+      %span
+        Laugher is a universal language.
+  - else
+    %p.welcome-msg.center
+      Multilingual?
+      %br
+      %span
+        Start laughing
+  .card
+    - @jokes.each do |joke|
+      .card-element
+        .vote-container.center
+          .votes
+            = link_to upvote_joke_path(joke), method: :get do
+              %i.fa.fa-arrow-circle-o-up.fa-lg
+            %p
+              = joke.upvotes_score
+            = link_to downvote_joke_path(joke), method: :get do
+              %i.fa.fa-arrow-circle-o-down.fa-lg
+        %h2= link_to joke.title, joke
+        /%p= truncate(joke.body, length: 60, separator: ' ')
+        .flexbox
+          %p.small-text
+            Posted by:
+            = joke.user.username
+            about
+            = time_ago_in_words(joke.created_at)
+            |
+            = link_to pluralize(joke.comments.count, "Comment"), joke

@@ -1,0 +1,29 @@
+@import "button";
+
+.input{
+  max-width: 520px;
+  input, textarea{
+    display: block;
+    width: 100%;
+    background: none;
+    border: 0;
+    border-bottom: $main-color 1px solid;
+    padding: .5rem;
+    font-size: $body-copy;
+    color: $body-text-color;
+    font-weight: 300;
+    margin: $spacing-unit/2 0;
+    &:focus{
+      outline: 0;
+    }
+  }
+
+  textarea{
+    min-height: 100px;
+  }
+
+  label{
+    font-weight: 600;
+    color: $sub-text;
+  }
+}

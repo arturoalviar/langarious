@@ -1,0 +1,14 @@
+.notification{
+  position: relative;
+  width: 100%;
+  padding: 1rem $spacing-unit;
+  color: $white;
+}
+
+.alert-danger{
+  background: $alert;
+}
+
+.alert-success{
+  background: $success;
+}

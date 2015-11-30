@@ -1,0 +1,48 @@
+- title "Langarious | #{@joke.title}"
+.container-small
+  .card
+    .card-element
+      .vote-container.center
+        .votes
+          = link_to upvote_joke_path(@joke), method: :get do
+            %i.fa.fa-arrow-circle-o-up.fa-lg
+          %p
+            = @joke.upvotes_score
+          = link_to downvote_joke_path(@joke), method: :get do
+            %i.fa.fa-arrow-circle-o-down.fa-lg
+      %h1.big-header= @joke.title
+      .flexbox
+        %p.small-text
+          Posted by:
+          = @joke.user.username
+          about
+          = time_ago_in_words(@joke.created_at)
+          |
+          = pluralize(@joke.comments.count, "Comment")
+        - if @signed_in_username.eql? @joke.user.username
+          .user-post-controls
+            =link_to "Edit", edit_joke_path(@joke)
+            =link_to "Delete", joke_path(@joke), method: :delete
+
+      %p.joke-body= @joke.body
+      .flexbox
+        %p.small-text
+          Langauges:
+          - @joke.tags.each do |tag|
+            %span= tag.name
+
+  .card
+    .card-content
+      %h3.small-header
+        = pluralize(@joke.comments.count, "Comment")
+      = render 'comments/form'
+  /pass in a collection, means passes an array of comment objects to partial. Note: adding the keyword 'partial' is key. The name of the partial is
+  /what you use as a variale name in the partial itself
+  - if @joke.comments.count > 0
+    .card
+      = render partial: 'jokes/comment', collection: @joke.comments
+  - else
+    .card
+      .card-content
+        %p
+          No comments

@@ -1,0 +1,3 @@
+module JokesHelper
+  
+end

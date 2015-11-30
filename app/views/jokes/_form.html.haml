@@ -1,0 +1,5 @@
+= simple_form_for @joke do |f|
+  = f.input :title, required: true, placeholder: "Joke title"
+  = f.input :body, placeholder: "Punchline"
+  = f.input :tag_list, placeholder: "Add Langauges seperated by commas", label: "Langauges"
+  = f.button :submit, class: 'raised-btn'

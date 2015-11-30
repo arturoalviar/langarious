@@ -1,0 +1,41 @@
+.card{
+  position: relative;
+  background: $card;
+  padding: $spacing-unit 0;
+  margin: $spacing-unit/2 0;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.card-container{
+  padding: $spacing-unit;
+}
+
+.card-content{
+  display: block;
+  position: relative;
+  padding: $spacing-unit;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+
+  &:last-of-type{
+    border-bottom: 0;
+  }
+}
+
+.card-element{
+  @extend .card-content;
+  padding-left: $spacing-unit * 2;
+}
+
+
+.vote-container{
+  position: absolute;
+  top: 20px;
+  left: $spacing-unit/1.8;
+  width: $spacing-unit;
+}
+
+.votes{
+  @include flexbox(column, nowrap, center, center, space-around)
+}

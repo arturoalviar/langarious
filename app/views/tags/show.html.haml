@@ -1,0 +1,15 @@
+.container-small
+  .card
+    .card-content
+      %h2.sub-header
+        = @tag.name
+        Jokes
+      - if @tag.jokes.count > 0
+        - @tag.jokes.each do |joke|
+          %p
+            = link_to joke.title, joke_path(joke)
+      - else
+        %p
+          No
+          = @tag.name
+          jokes found

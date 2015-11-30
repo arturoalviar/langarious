@@ -1,0 +1,31 @@
+.nav{
+  border-bottom: 1px solid #eee;
+  ul{
+  list-style: none;
+  margin: 0;
+    a{
+      padding: $spacing-unit/2 $spacing-unit;
+    }
+    li{
+      display: inline-block;
+    }
+
+  }
+}
+
+
+.user-menu{
+  position: relative;
+  ul{
+    display: none;
+    width: 200px;
+    max-width: 200px;
+    position: absolute;
+    top: 2.7rem;
+    left: -90%;
+    text-align: right;
+    a{
+      display: block;
+    }
+  }
+}

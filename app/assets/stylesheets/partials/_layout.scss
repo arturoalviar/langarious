@@ -1,0 +1,30 @@
+.flexbox{
+  @include flexbox();
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: $spacing-unit/2;
+}
+
+.container-small{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-unit/2;
+}
+
+.user-post-controls{
+  a{
+    margin: 0 $spacing-unit/2;
+    &:first-of-type{
+      margin-left: 0;
+    }
+  }
+
+}
+
+
+.shared-links{
+  margin: $spacing-unit 0;
+}

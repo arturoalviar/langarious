@@ -1,0 +1,10 @@
+.container-small
+  .card
+    .card-content
+      %h2.sub-header Languages
+      - if @tags.count > 0
+        - @tags.each do |tag|
+          %p
+            = link_to tag.name, tag_path(tag)
+      - else
+        %p No language options available

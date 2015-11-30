@@ -1,0 +1,59 @@
+[class$='header']{
+  color: $header-text-color;
+}
+
+.card{
+  p{
+    font-size: $body-copy;
+    font-weight: 300;
+    color: $body-text-color;
+  }
+  .small-text{
+    font-size: $small-font-size;
+    font-weight: 600;
+    color: $sub-text;
+  }
+}
+
+.username, .joke-body{
+  margin: $spacing-unit/2 0;
+}
+
+.welcome-msg{
+  font-size: $body-copy;
+  padding: $spacing-unit;
+  color: $sub-text;
+  margin: 0;
+}
+
+.center{
+  text-align: center;
+}
+
+.left{
+  text-align: left;
+}
+
+.big-header{
+  font-size: $h1-size;
+  font-weight: bold;
+}
+
+.sub-header{
+  font-size: $h2-size;
+  font-weight: bold;
+}
+
+.small-header{
+  font-size: $h3-size;
+  font-weight: 600;
+}
+
+
+.footer{
+  p{
+    font-size: $body-copy;
+    font-weight: 300;
+    color: $body-text-color;
+  }
+}
