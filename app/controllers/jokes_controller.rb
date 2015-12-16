@@ -5,7 +5,7 @@ class JokesController < ApplicationController
 
   #used by index page to get all jokes
   def index
-    @jokes = Joke.all()
+    @jokes = Joke.all
   end
 
   #user makes new joke
